@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('judul')</title>
     <style>
+        .tombol {
+            border: 1px solid grey;
+            padding: 10px 20px;
+            background-color: salmon;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
