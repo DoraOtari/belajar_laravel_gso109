@@ -1,13 +1,7 @@
 @extends('template')
 @section('judul', 'Dashboard')
 @section('isi')
-  <section id="navigasi">
-    <ul>
-      <li><a href="">Home</a> </li>
-      <li><a href="">Jabatan</a> </li>
-      <li><a href="">Karyawan</a></li>
-    </ul>
-  </section>
+
   <div id="hakim">
     <div id="zakiah">
       <h2 class="judul">Absensi Karyawan</h2>

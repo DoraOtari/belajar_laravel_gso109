@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('judul')</title>
     <style>
+        .tabel {
+            border: 1px solid black;
+            border-collapse: collapse;
+           
+        }
+        .tabel thead tr th {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: salmon;
+            color: whitesmoke;
+        }
+        .tabel tbody tr td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .kartu {
+            border: 1px solid grey;
+            border-radius: 8px;
+            width: fit-content;
+            padding: 10px 15px;
+            margin: 15px auto;
+        }
         .tombol {
             border: 1px solid grey;
             padding: 10px 20px;
@@ -42,12 +64,6 @@
             grid-template-columns: 40% 40%;
             justify-content: center;
         }
-        #zakiah {
-          
-        }
-        #adinda {
-           
-        }
 
         .judul {
             font-family: Arial, Helvetica, sans-serif;
@@ -59,9 +75,26 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 18px;
         }
+
+        .aktif {
+           background-color: salmon; 
+        }
     </style>
 </head>
 <body>
+    <section id="navigasi">
+        <ul>
+          <li><a class="{{ Request::is('dashboard') ? 'aktif' : '' }}" href="{{ url('/dashboard') }}">Dashboard</a> </li>
+          <li><a class="{{ Request::is('jabatan') ? 'aktif' : '' }}" href="{{ url('/jabatan') }}">Jabatan</a> </li>
+          <li><a href="">Karyawan</a></li>
+          <li style="float:right;">
+            <form action="{{ route('logout') }}" method="post">
+              @csrf
+              <button style="background-color: salmon;color: white;border: none;display: block;padding: 15px;">Logout</button>
+            </form>
+          </li>
+        </ul>
+      </section>
 @yield('isi')
 </body>
 </html>
